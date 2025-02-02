@@ -15,12 +15,15 @@ const Form = () => {
     <div>
       <Grid container spacing={2}>
         <Grid size={{ xs: 12 }}>
+          {/* Title for the form */}
           <Typography align="center" variant="subtitle2" gutterBottom>
+            {/* Placeholder for form title */}
             ....
           </Typography>
         </Grid>
 
         <Grid size={{ xs: 6 }}>
+          {/* Select Type (Income/Expense) */}
           <FormControl fullWidth>
             <InputLabel>Type </InputLabel>
             <Select>
@@ -31,6 +34,7 @@ const Form = () => {
         </Grid>
 
         <Grid size={{ xs: 6 }}>
+          {/* Select Category */}
           <FormControl fullWidth>
             <InputLabel>Category</InputLabel>
             <Select>
@@ -41,6 +45,7 @@ const Form = () => {
         </Grid>
 
         <Grid size={{ xs: 6 }}>
+          {/* Input Amount */}
           <TextField
             type="number"
             label="Amount"
@@ -50,10 +55,11 @@ const Form = () => {
         </Grid>
 
         <Grid size={{ xs: 6 }}>
+          {/* Input Date */}
           <TextField type="date" variant="standard" label="Date" fullWidth />
         </Grid>
 
-        {/* will be style with styled */}
+        {/* Submit Button to create a new transaction */}
         <Button
           color="primary"
           variant="outlined"

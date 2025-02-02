@@ -17,6 +17,7 @@ const Main = () => {
 
         <CardContent>
           <Typography align="center" variant="h5">
+            {/* Display total balance */}
             Total Balance $100{" "}
           </Typography>
 
@@ -24,20 +25,20 @@ const Main = () => {
             variant="subtitle1"
             style={{ lineHeight: "1.5em", marginTop: "20px" }}
           >
-            {/* Info Card Component */}
+            {/* Instruction for using the speechly feature */}
             Try saying something to the speechly
           </Typography>
 
           <Divider />
 
-          {/* Form Component */}
+          {/* Form Component for adding new transactions */}
           <Form />
         </CardContent>
 
         <CardContent style={{ padding: 0 }}>
           <Grid container spacing={2}>
             <Grid size={{ xs: 12 }}>
-              {/* List Component */}
+              {/* List Component to display transactions */}
               <List />
             </Grid>
           </Grid>
