@@ -4,6 +4,8 @@ import { RedCard, GreenCard, BlueCard } from "./style";
 // import { Doughnut } from "react-chartjs-2";
 
 const Detail = ({ title, amount }) => {
+
+  //dynamic styling component
   let CardComponent;
 
   // Choose the styled card based on the variant
@@ -16,6 +18,8 @@ const Detail = ({ title, amount }) => {
   }
 
   return (
+
+    //this card component is comming from STLYED API 
     <CardComponent>
       <CardHeader title={title} />
       <CardContent>
