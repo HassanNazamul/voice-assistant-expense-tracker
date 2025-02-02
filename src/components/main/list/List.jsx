@@ -1,7 +1,55 @@
 import React from "react";
+import { StyleList, AvatarIncome, AvatarExpense } from "./style";
+import {
+  IconButton,
+  ListItem,
+  ListItemAvatar,
+  ListItemText,
+  Slide,
+} from "@mui/material";
+import { Delete, MoneyOff } from "@mui/icons-material"; // Import MoneyOff icon
 
 const List = () => {
-  return <div>List</div>;
+  // Example transaction with type, category, amount, and date
+  const transaction = [
+    { id: 1, type: "Income", category: "Salary", amount: 50, date: new Date() },
+  ];
+
+  return (
+    <div>
+      <StyleList dense={false}>
+        {transaction.map((trans) => (
+          <Slide direction="down" in mountOnEnter unmountOnExit key={trans?.id}>
+            <ListItem>
+              <ListItemAvatar>
+                {/* Conditionally render AvatarIncome or AvatarExpense based on transaction type */}
+                {trans?.type === "Income" ? (
+                  <AvatarIncome>
+                    <MoneyOff /> {/* Add MoneyOff icon */}
+                  </AvatarIncome>
+                ) : (
+                  <AvatarExpense>
+                    <MoneyOff /> {/* Add MoneyOff icon */}
+                  </AvatarExpense>
+                )}
+              </ListItemAvatar>
+
+              {/* Display transaction category and amount with date */}
+              <ListItemText
+                primary={trans?.category}
+                secondary={`$${trans?.amount} - ${trans?.date}`}
+              />
+
+              {/* Placeholder for delete button */}
+              <IconButton edge="end" aria-label="delete" onClick="">
+                <Delete />
+              </IconButton>
+            </ListItem>
+          </Slide>
+        ))}
+      </StyleList>
+    </div>
+  );
 };
 
 export default List;

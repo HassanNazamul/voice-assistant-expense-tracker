@@ -17,7 +17,7 @@ function App() {
           <Detail title="Income" amount="$50" />
         </Grid>
 
-        <Grid size={{ xs: 12, sm: 3 }}>
+        <Grid size={{ xs: 12, sm: 4 }}>
           <Main />
         </Grid>
 

@@ -1,5 +1,5 @@
 import { styled } from "@mui/material/styles";
-import { Avatar } from "@mui/material";
+import { Avatar, List } from "@mui/material";
 import { green, red } from "@mui/material/colors";
 
 // Avatar styles for income and expense
@@ -14,7 +14,7 @@ export const AvatarExpense = styled(Avatar)(({ theme }) => ({
 }));
 
 // List styles
-export const List = styled("div")({
+export const StyleList = styled(List)({
   maxHeight: "150px",
   overflow: "auto", // To make the list scrollable
 });

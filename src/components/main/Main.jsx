@@ -1,19 +1,14 @@
 import React from "react";
 import { MainCard } from "./style";
-import {
-  CardContent,
-  CardHeader,
-  Divider,
-  List,
-  Typography,
-} from "@mui/material";
+import { CardContent, CardHeader, Divider, Typography } from "@mui/material";
 import Grid from "@mui/material/Grid2";
 import Form from "./form/Form";
+import List from "./list/List";
 
 const Main = () => {
   return (
     <div>
-      {/* this main card is comming style api */}
+      {/* MainCard component styled using styled-components */}
       <MainCard>
         <CardHeader
           title="Expense Tracker"
@@ -29,7 +24,7 @@ const Main = () => {
             variant="subtitle1"
             style={{ lineHeight: "1.5em", marginTop: "20px" }}
           >
-            {/* Info Card Component  */}
+            {/* Info Card Component */}
             Try saying something to the speechly
           </Typography>
 
@@ -39,13 +34,15 @@ const Main = () => {
           <Form />
         </CardContent>
 
-        {/* another card content */}
-        {/* which will be styled */}
-        <CardContent>
+        <CardContent style={{ padding: 0 }}>
           <Grid container spacing={2}>
-            <Grid size={{ xs: 12 }}>{/* <List /> */}</Grid>
+            <Grid size={{ xs: 12 }}>
+              {/* List Component */}
+              <List />
+            </Grid>
           </Grid>
         </CardContent>
+        
       </MainCard>
     </div>
   );

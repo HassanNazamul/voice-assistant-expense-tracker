@@ -19,10 +19,6 @@ export const MainCard = styled(Card)(({ theme }) => ({
     expandOpen: {
         transform: 'rotate(180deg)',
     },
-    // Cart content padding
-    cartContent: {
-        paddingTop: 0,
-    },
     // Divider styling
     divider: {
         margin: '20px 0',
