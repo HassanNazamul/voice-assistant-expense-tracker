@@ -8,6 +8,7 @@ import {
   Typography,
 } from "@mui/material";
 import Grid from "@mui/material/Grid2";
+import Form from "./form/Form";
 
 const Main = () => {
   return (
@@ -35,6 +36,7 @@ const Main = () => {
           <Divider />
 
           {/* Form Component */}
+          <Form />
         </CardContent>
 
         {/* another card content */}
