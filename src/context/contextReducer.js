@@ -12,20 +12,17 @@
 // so this will be come as state
 
 const contextReducer = (state, action) => {
-
-    let transaction;
+    let transactions;
 
     switch (action.type) {
         case 'DELETE_TRANSACTION':
-
-            //it will pick up only the matchinh id and store in variable
-            //rest will be added as a new array excluding the id
-            transaction = state.filter((t) => t.id !== action.payload);
-            return transaction;
+            // It will pick up only the matching id and store in variable
+            // Rest will be added as a new array excluding the id
+            transactions = state.filter((t) => t.id !== action.payload);
+            return transactions;
         case 'ADD_TRANSACTION':
-
-            transaction = [action.payload, ...state]
-            return transaction;
+            transactions = [action.payload, ...state];
+            return transactions;
         default:
             return state;
     }

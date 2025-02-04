@@ -11,7 +11,7 @@ import Grid from "@mui/material/Grid2";
 import React, { useState } from "react";
 import { useContext } from "react";
 import { ExpenseTrackerContext } from "../../../context/context";
-import {v4 as uuid} from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 //a simple object to collect form data
 const initialState = {
@@ -24,19 +24,21 @@ const initialState = {
 const Form = () => {
   const [formData, setFormData] = useState(initialState);
 
-  const {addtransaction} = useContext(ExpenseTrackerContext);
+  const { addTransaction } = useContext(ExpenseTrackerContext);
 
-
-  const createTransaction = () =>{
-
+  const createTransaction = () => {
     //few change need to be done before adding to the transaction state
     //1st adding unique id,, 2nd converting amount string to number
-    const transaction = {...formData, amount: Number(formData.amount), id: uuid()}
-    addtransaction(transaction)
-    setFormData(initialState)
-  }
+    const transaction = {
+      ...formData,
+      amount: Number(formData.amount),
+      id: uuidv4(),
+    };
+    addTransaction(transaction);
+    setFormData(initialState);
+  };
 
-  console.log(formData);
+  // console.log(formData);
   return (
     <div>
       <Grid container spacing={2}>
@@ -111,7 +113,7 @@ const Form = () => {
           variant="outlined"
           fullWidth
           style={{ marginTop: "20px" }}
-          onClick={}
+          onClick={createTransaction}
         >
           Create
         </Button>
