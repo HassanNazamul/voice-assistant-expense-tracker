@@ -12,7 +12,10 @@ import { Delete, MoneyOff } from "@mui/icons-material"; // Import MoneyOff icon
 const List = () => {
   // Example transaction with type, category, amount, and date
   const transaction = [
-    { id: 1, type: "Income", category: "Salary", amount: 50, date: new Date() },
+    { id: 1, type: "Income", category: "Salary", amount: 50, date: "Feb 16" },
+    { id: 2, type: "Expense", category: "Bill", amount: 50, date: "Feb 16" },
+    { id: 3, type: "Income", category: "Trading", amount: 50, date: "Feb 16" },
+    { id: 4, type: "Expense", category: "Fuel", amount: 50, date: "Feb 16" },
   ];
 
   return (
