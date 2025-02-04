@@ -17,21 +17,23 @@ const List = () => {
   // const globalState = useContext(ExpenseTrackerContext);
 
   //destruction the function in it
-  const { deleteTransaction } = useContext(ExpenseTrackerContext);
+  const { deleteTransaction, transactionsList } = useContext(
+    ExpenseTrackerContext
+  );
 
   // console.log(globalState);
   // Example transaction with type, category, amount, and date
-  const transaction = [
-    { id: 1, type: "Income", category: "Salary", amount: 50, date: "Feb 16" },
-    { id: 2, type: "Expense", category: "Bill", amount: 50, date: "Feb 16" },
-    { id: 3, type: "Income", category: "Trading", amount: 50, date: "Feb 16" },
-    { id: 4, type: "Expense", category: "Fuel", amount: 50, date: "Feb 16" },
-  ];
+  // const transaction = [
+  //   { id: 1, type: "Income", category: "Salary", amount: 50, date: "Feb 16" },
+  //   { id: 2, type: "Expense", category: "Bill", amount: 50, date: "Feb 16" },
+  //   { id: 3, type: "Income", category: "Trading", amount: 50, date: "Feb 16" },
+  //   { id: 4, type: "Expense", category: "Fuel", amount: 50, date: "Feb 16" },
+  // ];
 
   return (
     <div>
       <StyleList dense={false}>
-        {transaction.map((trans) => (
+        {transactionsList.map((trans) => (
           <Slide direction="down" in mountOnEnter unmountOnExit key={trans?.id}>
             <ListItem>
               <ListItemAvatar>
