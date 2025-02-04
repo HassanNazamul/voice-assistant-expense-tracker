@@ -1,5 +1,9 @@
 import React from "react";
+import { useContext } from "react";
 import { StyleList, AvatarIncome, AvatarExpense } from "./style";
+
+import { ExpenseTrackerContext } from "../../../context/context";
+
 import {
   IconButton,
   ListItem,
@@ -10,6 +14,12 @@ import {
 import { Delete, MoneyOff } from "@mui/icons-material"; // Import MoneyOff icon
 
 const List = () => {
+  // const globalState = useContext(ExpenseTrackerContext);
+
+  //destruction the function in it
+  const { deleteTransaction } = useContext(ExpenseTrackerContext);
+
+  // console.log(globalState);
   // Example transaction with type, category, amount, and date
   const transaction = [
     { id: 1, type: "Income", category: "Salary", amount: 50, date: "Feb 16" },
