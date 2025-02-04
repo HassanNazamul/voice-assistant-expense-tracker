@@ -56,7 +56,11 @@ const List = () => {
               />
 
               {/* Placeholder for delete button */}
-              <IconButton edge="end" aria-label="delete" onClick="">
+              <IconButton
+                edge="end"
+                aria-label="delete"
+                onClick={() => deleteTransaction(trans.id)}
+              >
                 <Delete />
               </IconButton>
             </ListItem>
