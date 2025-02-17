@@ -1,7 +1,7 @@
 import React from "react";
 import { CardHeader, CardContent, Typography } from "@mui/material";
 import { RedCard, GreenCard, BlueCard } from "./style";
-// import { Doughnut } from "react-chartjs-2";
+import { Doughnut } from "react-chartjs-2";
 
 const Detail = ({ title, amount }) => {
 
@@ -24,6 +24,7 @@ const Detail = ({ title, amount }) => {
       <CardHeader title={title} />
       <CardContent>
         <Typography variant="h5">{amount}</Typography>
+        {/* <Doughnut data={DATA}></Doughnut> */}
       </CardContent>
     </CardComponent>
   );

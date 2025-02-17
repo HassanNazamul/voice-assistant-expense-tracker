@@ -15,6 +15,7 @@ const Main = () => {
           subheader="powered by Nazamul Hassan"
         ></CardHeader>
 
+        {/* the form  */}
         <CardContent>
           <Typography align="center" variant="h5">
             {/* Display total balance */}
@@ -35,6 +36,7 @@ const Main = () => {
           <Form />
         </CardContent>
 
+        {/* showing list of transaction */}
         <CardContent style={{ padding: 0 }}>
           <Grid container spacing={2}>
             <Grid size={{ xs: 12 }}>
