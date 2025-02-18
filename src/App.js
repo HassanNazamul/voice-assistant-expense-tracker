@@ -15,7 +15,7 @@ function App() {
       >
         {/* Grid item for Income details */}
         <Grid size={{ xs: 12, sm: 4 }}>
-          <Detail title="Income" amount="$50" />
+          <Detail title="Income"   />
         </Grid>
 
         {/* Grid item for Main component */}
@@ -25,7 +25,7 @@ function App() {
 
         {/* Grid item for Expenses details */}
         <Grid size={{ xs: 12, sm: 4 }}>
-          <Detail title="Expenses" amount="$200" />
+          <Detail title="Expense" />
         </Grid>
       </Grid>
     </div>

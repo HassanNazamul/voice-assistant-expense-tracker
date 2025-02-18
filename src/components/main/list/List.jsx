@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { StyleList, AvatarIncome, AvatarExpense } from "./style";
 
 import { ExpenseTrackerContext } from "../../../context/context";
+import formatDate from "../../../utilies/formatDate"; // Import formatDate function
 
 import {
   IconButton,
@@ -33,39 +34,42 @@ const List = () => {
   return (
     <div>
       <StyleList dense={false}>
-        {transactionsList.map((trans) => (
-          <Slide direction="down" in mountOnEnter unmountOnExit key={trans?.id}>
-            <ListItem>
-              <ListItemAvatar>
-                {/* Conditionally render AvatarIncome or AvatarExpense based on transaction type */}
-                {trans?.type === "Income" ? (
-                  <AvatarIncome>
-                    <MoneyOff /> {/* Add MoneyOff icon */}
-                  </AvatarIncome>
-                ) : (
-                  <AvatarExpense>
-                    <MoneyOff /> {/* Add MoneyOff icon */}
-                  </AvatarExpense>
-                )}
-              </ListItemAvatar>
+        {transactionsList.map((trans) => {
+          const formattedDate = formatDate(trans?.date); // Format date
+          return (
+            <Slide direction="down" in mountOnEnter unmountOnExit key={trans?.id}>
+              <ListItem>
+                <ListItemAvatar>
+                  {/* Conditionally render AvatarIncome or AvatarExpense based on transaction type */}
+                  {trans?.type === "Income" ? (
+                    <AvatarIncome>
+                      <MoneyOff /> {/* Add MoneyOff icon */}
+                    </AvatarIncome>
+                  ) : (
+                    <AvatarExpense>
+                      <MoneyOff /> {/* Add MoneyOff icon */}
+                    </AvatarExpense>
+                  )}
+                </ListItemAvatar>
 
-              {/* Display transaction category and amount with date */}
-              <ListItemText
-                primary={trans?.category}
-                secondary={`$${trans?.amount} - ${trans?.date}`}
-              />
+                {/* Display transaction category and amount with formatted date */}
+                <ListItemText
+                  primary={trans?.category}
+                  secondary={`$${trans?.amount} - ${formattedDate}`}
+                />
 
-              {/* Placeholder for delete button */}
-              <IconButton
-                edge="end"
-                aria-label="delete"
-                onClick={() => deleteTransaction(trans.id)}
-              >
-                <Delete />
-              </IconButton>
-            </ListItem>
-          </Slide>
-        ))}
+                {/* Placeholder for delete button */}
+                <IconButton
+                  edge="end"
+                  aria-label="delete"
+                  onClick={() => deleteTransaction(trans.id)}
+                >
+                  <Delete />
+                </IconButton>
+              </ListItem>
+            </Slide>
+          );
+        })}
       </StyleList>
     </div>
   );

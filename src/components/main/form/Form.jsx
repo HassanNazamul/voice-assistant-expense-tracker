@@ -120,6 +120,7 @@ const Form = () => {
             variant="standard"
             label="Date"
             fullWidth
+            value={formData.date} // Set the value to formatted date
             onChange={(e) =>
               setFormData({ ...formData, date: formatDate(e.target.value) })
             }

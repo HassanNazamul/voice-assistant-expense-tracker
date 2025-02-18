@@ -2,7 +2,11 @@ import React from "react";
 import { CardHeader, CardContent, Typography } from "@mui/material";
 import { RedCard, GreenCard, BlueCard } from "./style";
 import { Doughnut } from "react-chartjs-2";
+import { Chart, ArcElement, Tooltip, Legend } from "chart.js";
 import useTransaction from "../../useTransaction";
+
+// Register the ArcElement for the doughnut chart
+Chart.register(ArcElement, Tooltip, Legend);
 
 const Detail = ({ title }) => {
   // Dynamic styling component
@@ -11,7 +15,7 @@ const Detail = ({ title }) => {
   // Choose the styled card based on the title
   if (title === "Income") {
     CardComponent = GreenCard;
-  } else if (title === "Expenses") {
+  } else if (title === "Expense") {
     CardComponent = RedCard;
   } else {
     CardComponent = BlueCard;
